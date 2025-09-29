@@ -12,7 +12,7 @@
     </iframe>
     <script>
       window.onload = function(){
-        document.queryselector("iframe").requestFullscreen().catch((err) => {
+        document.querySelector("iframe").requestFullscreen().catch((err) => {
           console.error(`Error attempting to enable full-screen mode: ${err.message}`);
         });
       };
