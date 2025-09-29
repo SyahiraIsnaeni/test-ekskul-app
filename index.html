@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      TESTING SIEKSA
+    </title>
+  </head>
+  <body>
+    <iframe src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"
+      width="100%" height="100%" allowfullscreen="true"
+      style="position:fixed; top:0; left:0; width:100%; border:none;">
+    </iframe>
+    <script>
+      window.onload = function(){
+        document.queryselector("iframe").requestFullscreen().catch((err) => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      };
+    </script>
+  </body>
+</html>
