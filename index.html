@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TESTING SIEKSA</title>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
       }
       body, html {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        touch-action: manipulation;
+        -webkit-overflow-scrolling: touch;
       }
       iframe {
         position: fixed;
@@ -26,14 +24,27 @@
         height: 100%;
         border: none;
         pointer-events: auto;
+        -webkit-overflow-scrolling: touch;
       }
     </style>
   </head>
   <body>
     <iframe 
       src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"
-      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-top-navigation"
-      allow="geolocation; microphone; camera"
+      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-top-navigation allow-pointer-lock"
+      allow="geolocation; microphone; camera; autoplay"
+      scrolling="yes"
+      frameborder="0"
     ></iframe>
+    <script>
+      // Force enable touch on iframe
+      const iframe = document.querySelector('iframe');
+      iframe.style.pointerEvents = 'auto';
+      
+      // Prevent iOS Safari from blocking touch
+      document.body.addEventListener('touchstart', function(e) {
+        e.stopPropagation();
+      }, {passive: true});
+    </script>
   </body>
 </html>
