@@ -31,33 +31,14 @@
     </style>
   </head>
   <body>
-    <div class="info">
-      <h2>🚀 Membuka Aplikasi...</h2>
-      <p>Jika tidak otomatis redirect, klik tombol di bawah</p>
-      <button onclick="openApp()">Buka Aplikasi</button>
-    </div>
     <script>
       const appUrl = "https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec";
       
-      function openApp() {
-        // Detect mobile
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        
-        if (isMobile) {
-          // Mobile: redirect langsung (biar touch work)
-          window.location.href = appUrl;
-        } else {
-          // Desktop: bisa pakai iframe
-          document.body.innerHTML = `
+      document.body.innerHTML = `
             <iframe src="${appUrl}" 
               style="position:fixed; top:0; left:0; width:100%; height:100%; border:none;">
             </iframe>
           `;
-        }
-      }
-      
-      // Auto open after 1 second
-      setTimeout(openApp, 1000);
     </script>
   </body>
 </html>
