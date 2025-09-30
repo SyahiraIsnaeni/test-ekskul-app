@@ -4,45 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TESTING SIEKSA</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      body, html {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      #iframe-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-      
-      /* Force scale di mobile */
-      @media (max-width: 768px) {
-        #iframe-wrapper {
-          transform: scale(0.85);
-          transform-origin: 0 0;
-          width: 117.65%; /* 100/0.85 */
-          height: 117.65%;
-        }
-      }
-    </style>
   </head>
   <body>
-    <div id="iframe-wrapper">
-      <iframe src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"></iframe>
-    </div>
+    <iframe src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"
+      style="position:fixed; top:0; left:0; width:100%; height:100%; border:none;">
+    </iframe>
+    
+    <script>
+      // Jangan pakai requestFullscreen, itu yang bikin button gabisa diklik!
+      
+      // Optional: Kalau masih kegedean di mobile, uncomment ini:
+      /*
+      if (window.innerWidth <= 768) {
+        const iframe = document.querySelector('iframe');
+        iframe.style.transform = 'scale(0.85)';
+        iframe.style.transformOrigin = '0 0';
+        iframe.style.width = '117.65%';
+        iframe.style.height = '117.65%';
+      }
+      */
+    </script>
   </body>
 </html>
