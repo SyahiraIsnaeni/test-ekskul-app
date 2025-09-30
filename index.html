@@ -8,42 +8,41 @@
       * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
-      html, body {
+      body, html {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        -webkit-text-size-adjust: none;
-        -moz-text-size-adjust: none;
-        -ms-text-size-adjust: none;
-        text-size-adjust: none;
       }
-      iframe {
+      #iframe-wrapper {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
         border: none;
-        display: block;
       }
       
-      /* Khusus mobile */
+      /* Force scale di mobile */
       @media (max-width: 768px) {
-        iframe {
-          width: 100vw;
-          height: 100vh;
-          min-width: 100%;
-          min-height: 100%;
+        #iframe-wrapper {
+          transform: scale(0.85);
+          transform-origin: 0 0;
+          width: 117.65%; /* 100/0.85 */
+          height: 117.65%;
         }
       }
     </style>
   </head>
   <body>
-    <iframe 
-      src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"
-      scrolling="auto"
-    ></iframe>
+    <div id="iframe-wrapper">
+      <iframe src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"></iframe>
+    </div>
   </body>
 </html>
