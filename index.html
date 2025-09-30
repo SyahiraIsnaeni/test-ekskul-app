@@ -2,43 +2,48 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TESTING SIEKSA</title>
     <style>
-      body {
+      * {
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-        background: #667eea;
-        color: white;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .info {
-        text-align: center;
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        text-size-adjust: none;
       }
-      button {
-        background: white;
-        color: #667eea;
+      iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         border: none;
-        padding: 15px 30px;
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-top: 20px;
+        display: block;
+      }
+      
+      /* Khusus mobile */
+      @media (max-width: 768px) {
+        iframe {
+          width: 100vw;
+          height: 100vh;
+          min-width: 100%;
+          min-height: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <script>
-      const appUrl = "https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec";
-      
-      document.body.innerHTML = `
-            <iframe src="${appUrl}" 
-              style="position:fixed; top:0; left:0; width:100%; height:100%; border:none;">
-            </iframe>
-          `;
-    </script>
+    <iframe 
+      src="https://script.google.com/macros/s/AKfycbwIWF3JDmT9HFq7g1xpY8WhA7sH2LSE4dOb54ug_WU9gZrgMyPD2Xibli9RfKfZrnb_WA/exec"
+      scrolling="auto"
+    ></iframe>
   </body>
 </html>
